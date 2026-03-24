@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Tools & Resources — Atker Consultancy Services</title>
+<meta name="description" content="CDM 2015 Digital Audit Tool and construction PM resources. Offline-ready, one-off purchase. Built by practitioners.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,300&display=swap" rel="stylesheet">
+<style>
+  :root { --orange:#E8561A; --orange-light:#F47340; --orange-tint:#FBE9E0; --charcoal:#1A1A1A; --slate:#3D3D3D; --mid:#737373; --rule:#E4E0DA; --bg:#FDFCFA; --bg-warm:#F5F3EF; }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--charcoal);line-height:1.6;overflow-x:hidden;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes pulseRing{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.6);opacity:0}}
+  .anim-up{animation:fadeUp .7s ease both}
+  .anim-up-2{animation:fadeUp .7s .15s ease both}
+  .anim-up-3{animation:fadeUp .7s .3s ease both}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 60px;background:rgba(253,252,250,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);}
+  .nav-logo{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:var(--charcoal);text-decoration:none;letter-spacing:-.02em;}
+  .nav-logo span{color:var(--orange);}
+  .nav-logo-img{height:44px;width:auto;display:block;}
+  .nav-links{display:flex;align-items:center;gap:30px;list-style:none;}
+  .nav-links a{font-size:14px;font-weight:500;color:var(--slate);text-decoration:none;transition:color .2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--orange);}
+  .nav-cta{background:var(--orange)!important;color:white!important;padding:9px 20px;border-radius:6px;font-weight:600!important;transition:background .2s,transform .2s!important;}
+  .nav-cta:hover{background:var(--orange-light)!important;transform:translateY(-1px);}
+  .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+  .nav-hamburger span{display:block;width:24px;height:2px;background:var(--charcoal);border-radius:2px;transition:all .3s;}
+
+  /* PAGE HERO */
+  .page-hero{background:var(--charcoal);padding:140px 60px 80px;position:relative;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;top:-120px;right:-120px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(232,86,26,.15) 0%,transparent 70%);pointer-events:none;}
+  .page-hero-label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange-light);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+  .page-hero-label::before{content:'';display:block;width:20px;height:2px;background:var(--orange-light);border-radius:2px;}
+  .page-hero h1{font-family:'Fraunces',serif;font-size:clamp(36px,5vw,68px);font-weight:700;line-height:1.05;letter-spacing:-.02em;color:white;margin-bottom:20px;}
+  .page-hero h1 em{font-style:italic;font-weight:300;color:var(--orange-light);}
+  .page-hero p{font-size:17px;color:rgba(255,255,255,.75);line-height:1.7;max-width:560px;font-weight:300;}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.35);margin-bottom:24px;}
+  .breadcrumb a{color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
+  .breadcrumb a:hover{color:var(--orange-light);}
+  .breadcrumb span{color:rgba(255,255,255,.5);}
+
+  /* SECTION BASE */
+  section{padding:80px 60px;}
+  .section-label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+  .section-label::before{content:'';display:block;width:20px;height:2px;background:var(--orange);border-radius:2px;}
+  .section-title{font-family:'Fraunces',serif;font-size:clamp(28px,4vw,48px);font-weight:600;line-height:1.1;letter-spacing:-.02em;color:var(--charcoal);margin-bottom:16px;}
+  .section-body{font-size:16px;color:var(--slate);line-height:1.75;max-width:580px;font-weight:300;margin-bottom:48px;}
+
+  /* CARDS */
+  .card{background:white;border-radius:16px;padding:36px;border:1px solid var(--rule);transition:transform .3s,box-shadow .3s;}
+  .card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.08);}
+  .card-accent{border-left:4px solid var(--orange);}
+  .tag{display:inline-block;background:var(--orange-tint);color:var(--orange);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:99px;margin-bottom:12px;}
+
+  /* BUTTONS */
+  .btn-primary{background:var(--orange);color:white;padding:14px 30px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;display:inline-block;transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(232,86,26,.3);}
+  .btn-primary:hover{background:var(--orange-light);transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,86,26,.35);}
+  .btn-outline{border:2px solid var(--orange);color:var(--orange);padding:12px 28px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;display:inline-block;transition:all .2s;}
+  .btn-outline:hover{background:var(--orange);color:white;}
+
+  /* FOOTER */
+  footer{background:var(--charcoal);padding:48px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;border-top:1px solid rgba(255,255,255,.06);}
+  .footer-brand{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:white;letter-spacing:-.02em;}
+  .footer-brand span{color:var(--orange);}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.3);margin-top:4px;}
+  .footer-links{display:flex;gap:24px;list-style:none;flex-wrap:wrap;}
+  .footer-links a{font-size:13px;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s;}
+  .footer-links a:hover{color:var(--orange);}
+  .footer-copy{font-size:12px;color:rgba(255,255,255,.2);}
+
+  /* MOBILE */
+  @media(max-width:900px){
+    nav{padding:14px 20px;}
+    .nav-links{display:none;}
+    .nav-links.open{display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:var(--bg);padding:20px;border-bottom:1px solid var(--rule);gap:16px;box-shadow:0 8px 24px rgba(0,0,0,.08);z-index:99;}
+    .nav-hamburger{display:flex;}
+    .page-hero{padding:110px 24px 60px;}
+    section{padding:60px 24px;}
+    footer{padding:36px 24px;flex-direction:column;text-align:center;}
+    .footer-links{justify-content:center;}
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Atker<span>.</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="services.html">Services</a></li>
+    <li><a href="tools.html" class="active">Tools</a></li>
+    <li><a href="blog/">Insights</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+  <div class="nav-hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> &rsaquo; <span>Tools</span></div>
+  <div class="page-hero-label anim-up">Digital Tools</div>
+  <h1 class="anim-up-2">Built by practitioners,<br>for <em>practitioners.</em></h1>
+  <p class="anim-up-3">We build the tools we wish existed. Practical, offline-ready resources for construction project managers — no subscriptions, no logins, no complexity.</p>
+</div>
+
+<section style="background:var(--bg-warm);">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:28px;">
+
+    <div style="background:white;border-radius:20px;overflow:hidden;border:1px solid var(--rule);display:flex;flex-direction:column;">
+      <div style="background:var(--charcoal);padding:32px;position:relative;overflow:hidden;">
+        <div style="position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:radial-gradient(circle,rgba(232,86,26,.2) 0%,transparent 70%);"></div>
+        <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(232,86,26,.2);border:1px solid rgba(232,86,26,.4);border-radius:99px;padding:4px 12px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:#F47340;margin-bottom:14px;">Available now</div>
+        <div style="font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:white;line-height:1.2;margin-bottom:8px;">CDM Digital Audit Tool</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.5);">CDM 2015 Site Compliance Checklist &mdash; works offline on any device</div>
+      </div>
+      <div style="padding:28px 32px;flex:1;display:flex;flex-direction:column;">
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px;flex:1;">
+          <li style="font-size:14px;color:var(--slate);display:flex;align-items:flex-start;gap:10px;line-height:1.5;"><span style="width:6px;height:6px;border-radius:50%;background:var(--orange);flex-shrink:0;margin-top:8px;display:block;"></span>45-item CDM 2015 checklist &mdash; Pre-start &amp; Construction Phase</li>
+          <li style="font-size:14px;color:var(--slate);display:flex;align-items:flex-start;gap:10px;line-height:1.5;"><span style="width:6px;height:6px;border-radius:50%;background:var(--orange);flex-shrink:0;margin-top:8px;display:block;"></span>Photo evidence capture against any checklist item</li>
+          <li style="font-size:14px;color:var(--slate);display:flex;align-items:flex-start;gap:10px;line-height:1.5;"><span style="width:6px;height:6px;border-radius:50%;background:var(--orange);flex-shrink:0;margin-top:8px;display:block;"></span>Running action log &mdash; owners, due dates, overdue flagging</li>
+          <li style="font-size:14px;color:var(--slate);display:flex;align-items:flex-start;gap:10px;line-height:1.5;"><span style="width:6px;height:6px;border-radius:50%;background:var(--orange);flex-shrink:0;margin-top:8px;display:block;"></span>One-click PDF compliance report export</li>
+          <li style="font-size:14px;color:var(--slate);display:flex;align-items:flex-start;gap:10px;line-height:1.5;"><span style="width:6px;height:6px;border-radius:50%;background:var(--orange);flex-shrink:0;margin-top:8px;display:block;"></span>Monthly snapshot &mdash; save, carry forward, re-assess</li>
+          <li style="font-size:14px;color:var(--slate);display:flex;align-items:flex-start;gap:10px;line-height:1.5;"><span style="width:6px;height:6px;border-radius:50%;background:var(--orange);flex-shrink:0;margin-top:8px;display:block;"></span>Works entirely offline &mdash; no internet, no software, no subscription</li>
+          <li style="font-size:14px;color:var(--slate);display:flex;align-items:flex-start;gap:10px;line-height:1.5;"><span style="width:6px;height:6px;border-radius:50%;background:var(--orange);flex-shrink:0;margin-top:8px;display:block;"></span>Includes Quick Start Guide PDF &amp; Example Audit PDF</li>
+        </ul>
+        <p style="font-size:11px;color:var(--mid);margin-bottom:20px;font-style:italic;">Replaces paper checklists and Excel. One-off purchase. Yours to keep.</p>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding-top:20px;border-top:1px solid var(--rule);">
+          <div style="font-family:'Fraunces',serif;font-size:32px;font-weight:700;color:var(--charcoal);">&pound;14.99 <span style="font-size:14px;color:var(--mid);font-family:'DM Sans',sans-serif;font-weight:400;">one-off</span></div>
+          <a href="https://payhip.com/b/FB1ZU" target="_blank" rel="noopener" class="btn-primary">Buy now &rarr;</a>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:var(--bg-warm);border-radius:20px;overflow:hidden;border:2px dashed var(--rule);display:flex;flex-direction:column;">
+      <div style="background:var(--slate);padding:32px;">
+        <div style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:99px;padding:4px 12px;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.45);margin-bottom:14px;">Coming soon</div>
+        <div style="font-family:'Fraunces',serif;font-size:24px;font-weight:700;color:rgba(255,255,255,.55);line-height:1.2;margin-bottom:8px;">More tools in development</div>
+        <div style="font-size:13px;color:rgba(255,255,255,.35);">Risk registers, project trackers, site inspection templates and more</div>
+      </div>
+      <div style="padding:28px 32px;flex:1;display:flex;flex-direction:column;">
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:24px;flex:1;">
+          <li style="font-size:14px;color:var(--mid);display:flex;align-items:flex-start;gap:10px;line-height:1.5;"><span style="width:6px;height:6px;border-radius:50%;background:var(--mid);flex-shrink:0;margin-top:8px;display:block;"></span>Construction risk register template</li>
+          <li style="font-size:14px;color:var(--mid);display:flex;align-items:flex-start;gap:10px;line-height:1.5;"><span style="width:6px;height:6px;border-radius:50%;background:var(--mid);flex-shrink:0;margin-top:8px;display:block;"></span>Project progress report template</li>
+          <li style="font-size:14px;color:var(--mid);display:flex;align-items:flex-start;gap:10px;line-height:1.5;"><span style="width:6px;height:6px;border-radius:50%;background:var(--mid);flex-shrink:0;margin-top:8px;display:block;"></span>Site inspection &amp; snagging tracker</li>
+          <li style="font-size:14px;color:var(--mid);display:flex;align-items:flex-start;gap:10px;line-height:1.5;"><span style="width:6px;height:6px;border-radius:50%;background:var(--mid);flex-shrink:0;margin-top:8px;display:block;"></span>Subcontractor vetting checklist</li>
+        </ul>
+        <p style="font-size:11px;color:var(--mid);margin-bottom:20px;font-style:italic;">Need a specific tool? Let us know and we&rsquo;ll build it.</p>
+        <div style="display:flex;align-items:center;justify-content:space-between;padding-top:20px;border-top:1px solid var(--rule);">
+          <div style="font-size:16px;color:var(--mid);font-weight:500;">Notify me when live</div>
+          <a href="index.html#contact" class="btn-outline">Get in touch</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">Why our tools</div>
+  <h2 class="section-title">What makes them different</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+    <div class="card" style="border-left:4px solid var(--orange);">
+      <div style="font-size:28px;margin-bottom:14px;">📱</div>
+      <h3 style="font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--charcoal);margin-bottom:8px;">Works offline</h3>
+      <p style="font-size:14px;color:var(--mid);line-height:1.65;font-weight:300;">Open in any browser, on any device. No internet connection required once the file is open. Built for real site conditions.</p>
+    </div>
+    <div class="card" style="border-left:4px solid var(--orange);">
+      <div style="font-size:28px;margin-bottom:14px;">💷</div>
+      <h3 style="font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--charcoal);margin-bottom:8px;">One-off purchase</h3>
+      <p style="font-size:14px;color:var(--mid);line-height:1.65;font-weight:300;">No subscriptions. No renewals. Buy once, use indefinitely. Yours to keep and use across all your projects.</p>
+    </div>
+    <div class="card" style="border-left:4px solid var(--orange);">
+      <div style="font-size:28px;margin-bottom:14px;">🏗️</div>
+      <h3 style="font-family:'Fraunces',serif;font-size:18px;font-weight:600;color:var(--charcoal);margin-bottom:8px;">Built from experience</h3>
+      <p style="font-size:14px;color:var(--mid);line-height:1.65;font-weight:300;">Every tool is built by practitioners who have used these processes on real projects. No theory, no bloat — just what's needed.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="footer-brand">Atker<span>.</span></div>
+    <div class="footer-tagline">Consultancy Services &mdash; Integrated Solutions</div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="blog/">Insights</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="footer-copy">&copy; 2026 Atker Consultancy Services Ltd</div>
+</footer>
+<script>
+function toggleNav(){document.getElementById('navLinks').classList.toggle('open');}
+document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+window.addEventListener('scroll',()=>{document.querySelector('nav').style.boxShadow=window.scrollY>10?'0 2px 20px rgba(0,0,0,.08)':'none';});
+</script>
+</body>
+</html>

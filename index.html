@@ -272,10 +272,11 @@
 <nav>
   <a href="#top" class="nav-logo">Atker<span>.</span></a>
   <ul class="nav-links" id="navLinks">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#shop">Tools</a></li>
-    <li><a href="#blog">Insights</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="blog/">Insights</a></li>
     <li><a href="#coverage">Coverage</a></li>
+    <li><a href="resources.html">Resources</a></li>
     <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
   </ul>
   <div class="nav-hamburger" id="hamburger" onclick="toggleNav()" aria-label="Menu">
@@ -642,12 +643,12 @@
       </div>
     </div>
     <div>
-      <div class="contact-form" id="contactForm">
+      <form class="contact-form" id="contactForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
         <div class="form-row">
-          <div class="form-field"><label>First name</label><input type="text" placeholder="Jane"></div>
-          <div class="form-field"><label>Last name</label><input type="text" placeholder="Smith"></div>
+          <div class="form-field"><label>First name</label><input type="text" name="first_name" placeholder="Jane"></div>
+          <div class="form-field"><label>Last name</label><input type="text" name="last_name" placeholder="Smith"></div>
         </div>
-        <div class="form-field"><label>Email address</label><input type="email" placeholder="jane@company.co.uk"></div>
+        <div class="form-field"><label>Email address</label><input type="email" name="email" placeholder="jane@company.co.uk"></div>
         <div class="form-field">
           <label>What do you need help with?</label>
           <select>
@@ -658,9 +659,10 @@
             <option>Both / Not sure yet</option>
           </select>
         </div>
-        <div class="form-field"><label>Tell us about your project</label><textarea placeholder="A brief overview &mdash; project type, timeline, any specific challenges..."></textarea></div>
-        <button class="form-submit" onclick="submitForm()">Send Message &#8594;</button>
-      </div>
+        <div class="form-field"><label>Tell us about your project</label><textarea name="message" placeholder="A brief overview &mdash; project type, timeline, any specific challenges..."></textarea></div>
+        <input type="hidden" name="_subject" value="New enquiry from Atker website">
+        <button class="form-submit" type="submit">Send Message &#8594;</button>
+      </form>
       <div class="form-success" id="formSuccess">
         <h3>Message received.</h3>
         <p>Thanks for getting in touch. We&rsquo;ll come back to you within one business day.</p>
@@ -676,10 +678,11 @@
     <div class="footer-tagline">Consultancy Services &mdash; Integrated Solutions</div>
   </div>
   <ul class="footer-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#shop">Tools</a></li>
-    <li><a href="#blog">Insights</a></li>
+    <li><a href="services.html">Services</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="blog/">Insights</a></li>
     <li><a href="#coverage">Coverage</a></li>
+    <li><a href="resources.html">Resources</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <div class="footer-copy">&copy; 2026 Atker Consultancy Services Ltd</div>
@@ -695,23 +698,46 @@
   window.addEventListener('scroll', () => {
     document.querySelector('nav').style.boxShadow = window.scrollY > 10 ? '0 2px 20px rgba(0,0,0,0.08)' : 'none';
   });
-  function submitForm() {
-    document.getElementById('contactForm').style.display = 'none';
-    document.getElementById('formSuccess').style.display = 'block';
+  // Formspree AJAX submission
+  var form = document.getElementById('contactForm');
+  if(form){
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var data = new FormData(form);
+      fetch(form.action, {method:'POST', body:data, headers:{'Accept':'application/json'}})
+        .then(function(r){
+          if(r.ok){
+            form.style.display='none';
+            document.getElementById('formSuccess').style.display='block';
+          } else { alert('There was a problem sending your message. Please email hello@atker.co.uk directly.'); }
+        })
+        .catch(function(){ alert('There was a problem sending your message. Please email hello@atker.co.uk directly.'); });
+    });
   }
   function openPost(id) {
-    document.getElementById(id).classList.add('open');
-    document.body.style.overflow = 'hidden';
+    var el = document.getElementById(id);
+    if(el){ el.classList.add('open'); document.body.style.overflow = 'hidden'; }
   }
   function closePost(id) {
-    document.getElementById(id).classList.remove('open');
-    document.body.style.overflow = '';
+    var el = document.getElementById(id);
+    if(el){ el.classList.remove('open'); document.body.style.overflow = ''; }
   }
-  document.querySelectorAll('.blog-overlay').forEach(overlay => {
-    overlay.addEventListener('click', function(e) {
-      if (e.target === this) { this.classList.remove('open'); document.body.style.overflow = ''; }
+  document.addEventListener('DOMContentLoaded', function(){
+    document.querySelectorAll('.blog-overlay').forEach(function(overlay){
+      overlay.addEventListener('click', function(e){
+        if(e.target === this){ this.classList.remove('open'); document.body.style.overflow = ''; }
+      });
+    });
+    document.querySelectorAll('.blog-card').forEach(function(card){
+      card.style.cursor = 'pointer';
     });
   });
+  // Also add blog post page links to card read buttons
+  var blogLinks = {
+    'post1': 'blog/cdm-2015-explained.html',
+    'post2': 'blog/pre-start-checklist.html',
+    'post3': 'blog/f10-notification.html'
+  };
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) { entry.target.style.opacity = '1'; entry.target.style.transform = 'translateY(0)'; }

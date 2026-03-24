@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Services — Atker Consultancy Services</title>
+<meta name="description" content="Senior project management and operations consultancy — per project, retained or concierge. Based in Hampshire and Dorset.">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,300&display=swap" rel="stylesheet">
+<style>
+  :root { --orange:#E8561A; --orange-light:#F47340; --orange-tint:#FBE9E0; --charcoal:#1A1A1A; --slate:#3D3D3D; --mid:#737373; --rule:#E4E0DA; --bg:#FDFCFA; --bg-warm:#F5F3EF; }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--charcoal);line-height:1.6;overflow-x:hidden;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes pulseRing{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.6);opacity:0}}
+  .anim-up{animation:fadeUp .7s ease both}
+  .anim-up-2{animation:fadeUp .7s .15s ease both}
+  .anim-up-3{animation:fadeUp .7s .3s ease both}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 60px;background:rgba(253,252,250,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);}
+  .nav-logo{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:var(--charcoal);text-decoration:none;letter-spacing:-.02em;}
+  .nav-logo span{color:var(--orange);}
+  .nav-logo-img{height:44px;width:auto;display:block;}
+  .nav-links{display:flex;align-items:center;gap:30px;list-style:none;}
+  .nav-links a{font-size:14px;font-weight:500;color:var(--slate);text-decoration:none;transition:color .2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--orange);}
+  .nav-cta{background:var(--orange)!important;color:white!important;padding:9px 20px;border-radius:6px;font-weight:600!important;transition:background .2s,transform .2s!important;}
+  .nav-cta:hover{background:var(--orange-light)!important;transform:translateY(-1px);}
+  .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+  .nav-hamburger span{display:block;width:24px;height:2px;background:var(--charcoal);border-radius:2px;transition:all .3s;}
+
+  /* PAGE HERO */
+  .page-hero{background:var(--charcoal);padding:140px 60px 80px;position:relative;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;top:-120px;right:-120px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(232,86,26,.15) 0%,transparent 70%);pointer-events:none;}
+  .page-hero-label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange-light);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+  .page-hero-label::before{content:'';display:block;width:20px;height:2px;background:var(--orange-light);border-radius:2px;}
+  .page-hero h1{font-family:'Fraunces',serif;font-size:clamp(36px,5vw,68px);font-weight:700;line-height:1.05;letter-spacing:-.02em;color:white;margin-bottom:20px;}
+  .page-hero h1 em{font-style:italic;font-weight:300;color:var(--orange-light);}
+  .page-hero p{font-size:17px;color:rgba(255,255,255,.75);line-height:1.7;max-width:560px;font-weight:300;}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.35);margin-bottom:24px;}
+  .breadcrumb a{color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
+  .breadcrumb a:hover{color:var(--orange-light);}
+  .breadcrumb span{color:rgba(255,255,255,.5);}
+
+  /* SECTION BASE */
+  section{padding:80px 60px;}
+  .section-label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+  .section-label::before{content:'';display:block;width:20px;height:2px;background:var(--orange);border-radius:2px;}
+  .section-title{font-family:'Fraunces',serif;font-size:clamp(28px,4vw,48px);font-weight:600;line-height:1.1;letter-spacing:-.02em;color:var(--charcoal);margin-bottom:16px;}
+  .section-body{font-size:16px;color:var(--slate);line-height:1.75;max-width:580px;font-weight:300;margin-bottom:48px;}
+
+  /* CARDS */
+  .card{background:white;border-radius:16px;padding:36px;border:1px solid var(--rule);transition:transform .3s,box-shadow .3s;}
+  .card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.08);}
+  .card-accent{border-left:4px solid var(--orange);}
+  .tag{display:inline-block;background:var(--orange-tint);color:var(--orange);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:99px;margin-bottom:12px;}
+
+  /* BUTTONS */
+  .btn-primary{background:var(--orange);color:white;padding:14px 30px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;display:inline-block;transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(232,86,26,.3);}
+  .btn-primary:hover{background:var(--orange-light);transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,86,26,.35);}
+  .btn-outline{border:2px solid var(--orange);color:var(--orange);padding:12px 28px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;display:inline-block;transition:all .2s;}
+  .btn-outline:hover{background:var(--orange);color:white;}
+
+  /* FOOTER */
+  footer{background:var(--charcoal);padding:48px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;border-top:1px solid rgba(255,255,255,.06);}
+  .footer-brand{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:white;letter-spacing:-.02em;}
+  .footer-brand span{color:var(--orange);}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.3);margin-top:4px;}
+  .footer-links{display:flex;gap:24px;list-style:none;flex-wrap:wrap;}
+  .footer-links a{font-size:13px;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s;}
+  .footer-links a:hover{color:var(--orange);}
+  .footer-copy{font-size:12px;color:rgba(255,255,255,.2);}
+
+  /* MOBILE */
+  @media(max-width:900px){
+    nav{padding:14px 20px;}
+    .nav-links{display:none;}
+    .nav-links.open{display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:var(--bg);padding:20px;border-bottom:1px solid var(--rule);gap:16px;box-shadow:0 8px 24px rgba(0,0,0,.08);z-index:99;}
+    .nav-hamburger{display:flex;}
+    .page-hero{padding:110px 24px 60px;}
+    section{padding:60px 24px;}
+    footer{padding:36px 24px;flex-direction:column;text-align:center;}
+    .footer-links{justify-content:center;}
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Atker<span>.</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="services.html" class="active">Services</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="blog/">Insights</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="index.html#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+  <div class="nav-hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="index.html">Home</a> &rsaquo; <span>Services</span></div>
+  <div class="page-hero-label anim-up">What we do</div>
+  <h1 class="anim-up-2">Senior expertise.<br>Two ways to <em>engage.</em></h1>
+  <p class="anim-up-3">25 years of combined project management and operations experience, available without the overhead of a full-time hire. Choose how you work with us.</p>
+</div>
+
+<section style="background:var(--bg-warm);">
+  <div class="section-label">Tier 1</div>
+  <h2 class="section-title">Project Management &amp; Consultancy</h2>
+  <p class="section-body">Senior-level PM and operations support for any industry, on a per-project or retained basis. For businesses that need real experience without a full-time hire — and for individuals who need a professional to manage something they can't.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:48px;">
+    <div class="card card-accent">
+      <div class="tag">Per project</div>
+      <h3 style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--charcoal);margin-bottom:10px;">Fixed fee engagements</h3>
+      <p style="font-size:14px;color:var(--slate);line-height:1.7;font-weight:300;">We scope the project, agree a fixed fee, and deliver. Clear start and end point. No surprises. Ideal for defined projects with a clear brief — refurbishments, procurement exercises, programme reviews, planning and coordination work.</p>
+    </div>
+    <div class="card card-accent">
+      <div class="tag">Retained</div>
+      <h3 style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--charcoal);margin-bottom:10px;">Monthly retainer</h3>
+      <p style="font-size:14px;color:var(--slate);line-height:1.7;font-weight:300;">A set number of days per month, available to your business on an ongoing basis. Suits organisations that need consistent PM oversight without a full-time headcount. Retainer rates from £1,500/month depending on commitment.</p>
+    </div>
+  </div>
+
+  <h3 style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--charcoal);margin-bottom:20px;">What we bring</h3>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:48px;">
+    <div style="padding:24px;background:white;border-radius:12px;border:1px solid var(--rule);">
+      <div style="font-size:24px;margin-bottom:12px;">🏗️</div>
+      <div style="font-weight:600;color:var(--charcoal);margin-bottom:6px;font-size:15px;">Construction &amp; Infrastructure</div>
+      <p style="font-size:13px;color:var(--mid);line-height:1.6;">CDM compliance, contractor management, site coordination, programme oversight.</p>
+    </div>
+    <div style="padding:24px;background:white;border-radius:12px;border:1px solid var(--rule);">
+      <div style="font-size:24px;margin-bottom:12px;">🏛️</div>
+      <div style="font-weight:600;color:var(--charcoal);margin-bottom:6px;font-size:15px;">Public Sector</div>
+      <p style="font-size:13px;color:var(--mid);line-height:1.6;">Programme delivery, stakeholder management, procurement, community engagement.</p>
+    </div>
+    <div style="padding:24px;background:white;border-radius:12px;border:1px solid var(--rule);">
+      <div style="font-size:24px;margin-bottom:12px;">🏢</div>
+      <div style="font-weight:600;color:var(--charcoal);margin-bottom:6px;font-size:15px;">SME &amp; Commercial</div>
+      <p style="font-size:13px;color:var(--mid);line-height:1.6;">Operational reviews, process improvement, project delivery, supplier management.</p>
+    </div>
+  </div>
+
+  <div style="background:var(--charcoal);border-radius:16px;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+    <div>
+      <div style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:white;margin-bottom:6px;">Day rate from £450/day</div>
+      <div style="font-size:14px;color:rgba(255,255,255,.55);">Retained from £1,500/month &middot; Fixed fee projects quoted individually</div>
+    </div>
+    <a href="index.html#contact" class="btn-primary">Discuss your project</a>
+  </div>
+</section>
+
+<section>
+  <div class="section-label">Tier 2</div>
+  <h2 class="section-title">Concierge &amp; Fixer Service</h2>
+  <p class="section-body">Need something sorted but don't know where to start? We source, vet and coordinate any service — trades, contractors, procurement, specialist suppliers. We find the right people and make sure the job gets done properly.</p>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:48px;">
+    <div class="card card-accent">
+      <div class="tag">Sourcing only</div>
+      <h3 style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--charcoal);margin-bottom:10px;">Finder's fee</h3>
+      <p style="font-size:14px;color:var(--slate);line-height:1.7;font-weight:300;">You need someone found, vetted and recommended. We do the legwork — source the right supplier or contractor, check their credentials, and hand you a shortlist with our recommendation. 10–15% of contract value, minimum £150.</p>
+    </div>
+    <div class="card card-accent">
+      <div class="tag">Full coordination</div>
+      <h3 style="font-family:'Fraunces',serif;font-size:20px;font-weight:600;color:var(--charcoal);margin-bottom:10px;">End-to-end management</h3>
+      <p style="font-size:14px;color:var(--slate);line-height:1.7;font-weight:300;">We find the right people and oversee the work from start to finish. All communication, quality checking and sign-off managed by us. 15–20% of total contract value or day rate, depending on scope. Minimum fee £100.</p>
+    </div>
+  </div>
+
+  <h3 style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--charcoal);margin-bottom:20px;">What we can source</h3>
+  <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:48px;">
+    <div style="padding:16px 20px;background:var(--bg-warm);border-radius:10px;border:1px solid var(--rule);font-size:14px;color:var(--slate);">🔨 Building trades</div>
+    <div style="padding:16px 20px;background:var(--bg-warm);border-radius:10px;border:1px solid var(--rule);font-size:14px;color:var(--slate);">🏠 Property specialists</div>
+    <div style="padding:16px 20px;background:var(--bg-warm);border-radius:10px;border:1px solid var(--rule);font-size:14px;color:var(--slate);">⚡ M&amp;E contractors</div>
+    <div style="padding:16px 20px;background:var(--bg-warm);border-radius:10px;border:1px solid var(--rule);font-size:14px;color:var(--slate);">📋 Professional services</div>
+    <div style="padding:16px 20px;background:var(--bg-warm);border-radius:10px;border:1px solid var(--rule);font-size:14px;color:var(--slate);">🚚 Procurement &amp; supply</div>
+    <div style="padding:16px 20px;background:var(--bg-warm);border-radius:10px;border:1px solid var(--rule);font-size:14px;color:var(--slate);">📝 CV &amp; document writing</div>
+    <div style="padding:16px 20px;background:var(--bg-warm);border-radius:10px;border:1px solid var(--rule);font-size:14px;color:var(--slate);">🔍 Specialist sourcing</div>
+    <div style="padding:16px 20px;background:var(--bg-warm);border-radius:10px;border:1px solid var(--rule);font-size:14px;color:var(--slate);">✅ Anything else — just ask</div>
+  </div>
+
+  <div style="background:var(--charcoal);border-radius:16px;padding:36px 40px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;">
+    <div>
+      <div style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:white;margin-bottom:6px;">If we can't do it, we'll find someone who can.</div>
+      <div style="font-size:14px;color:rgba(255,255,255,.55);">Minimum fee £100 &middot; Sourcing from 10% &middot; Full coordination from 15%</div>
+    </div>
+    <a href="index.html#contact" class="btn-primary">Get in touch</a>
+  </div>
+</section>
+
+<section style="background:var(--bg-warm);">
+  <div class="section-label">Coverage</div>
+  <h2 class="section-title">Hampshire, Dorset &amp; the South</h2>
+  <p class="section-body">Two founders based in Portsmouth and Sturminster Newton — giving wide coverage across Hampshire, Dorset, Wiltshire, Somerset and the wider South of England.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:600px;">
+    <div style="display:flex;align-items:center;gap:12px;padding:18px 20px;background:white;border-radius:10px;border:1px solid var(--rule);">
+      <div style="width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0;"></div>
+      <div><div style="font-size:14px;font-weight:600;">Portsmouth &amp; Hampshire</div><div style="font-size:12px;color:var(--mid);">MOD, coastal, infrastructure</div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:18px 20px;background:white;border-radius:10px;border:1px solid var(--rule);">
+      <div style="width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0;"></div>
+      <div><div style="font-size:14px;font-weight:600;">Dorset</div><div style="font-size:12px;color:var(--mid);">Sturminster Newton &amp; area</div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:18px 20px;background:white;border-radius:10px;border:1px solid var(--rule);">
+      <div style="width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0;"></div>
+      <div><div style="font-size:14px;font-weight:600;">Wiltshire &amp; Somerset</div><div style="font-size:12px;color:var(--mid);">Central South corridor</div></div>
+    </div>
+    <div style="display:flex;align-items:center;gap:12px;padding:18px 20px;background:white;border-radius:10px;border:1px solid var(--rule);">
+      <div style="width:8px;height:8px;border-radius:50%;background:var(--orange);flex-shrink:0;"></div>
+      <div><div style="font-size:14px;font-weight:600;">Sussex &amp; Surrey</div><div style="font-size:12px;color:var(--mid);">South East within reach</div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="footer-brand">Atker<span>.</span></div>
+    <div class="footer-tagline">Consultancy Services &mdash; Integrated Solutions</div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="index.html#services">Services</a></li>
+    <li><a href="tools.html">Tools</a></li>
+    <li><a href="blog/">Insights</a></li>
+    <li><a href="resources.html">Resources</a></li>
+    <li><a href="index.html#contact">Contact</a></li>
+  </ul>
+  <div class="footer-copy">&copy; 2026 Atker Consultancy Services Ltd</div>
+</footer>
+<script>
+function toggleNav(){document.getElementById('navLinks').classList.toggle('open');}
+document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+window.addEventListener('scroll',()=>{document.querySelector('nav').style.boxShadow=window.scrollY>10?'0 2px 20px rgba(0,0,0,.08)':'none';});
+</script>
+</body>
+</html>
