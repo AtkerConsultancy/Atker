@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>CDM 2015 Explained: What Every Construction PM Needs to Know — Atker Consultancy Services</title>
+<meta name="description" content="The Construction (Design and Management) Regulations 2015 — commonly known as CDM 2015 — are the primary regulatory framework governing health, safety">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,600;0,9..144,700;1,9..144,400;1,9..144,300&display=swap" rel="stylesheet">
+<style>
+  :root { --orange:#E8561A; --orange-light:#F47340; --orange-tint:#FBE9E0; --charcoal:#1A1A1A; --slate:#3D3D3D; --mid:#737373; --rule:#E4E0DA; --bg:#FDFCFA; --bg-warm:#F5F3EF; }
+  *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--charcoal);line-height:1.6;overflow-x:hidden;}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(24px)}to{opacity:1;transform:translateY(0)}}
+  @keyframes pulseRing{0%{transform:scale(1);opacity:.6}100%{transform:scale(1.6);opacity:0}}
+  .anim-up{animation:fadeUp .7s ease both}
+  .anim-up-2{animation:fadeUp .7s .15s ease both}
+  .anim-up-3{animation:fadeUp .7s .3s ease both}
+
+  /* NAV */
+  nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:14px 60px;background:rgba(253,252,250,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);}
+  .nav-logo{font-family:'Fraunces',serif;font-size:22px;font-weight:700;color:var(--charcoal);text-decoration:none;letter-spacing:-.02em;}
+  .nav-logo span{color:var(--orange);}
+  .nav-logo-img{height:44px;width:auto;display:block;}
+  .nav-links{display:flex;align-items:center;gap:30px;list-style:none;}
+  .nav-links a{font-size:14px;font-weight:500;color:var(--slate);text-decoration:none;transition:color .2s;}
+  .nav-links a:hover,.nav-links a.active{color:var(--orange);}
+  .nav-cta{background:var(--orange)!important;color:white!important;padding:9px 20px;border-radius:6px;font-weight:600!important;transition:background .2s,transform .2s!important;}
+  .nav-cta:hover{background:var(--orange-light)!important;transform:translateY(-1px);}
+  .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+  .nav-hamburger span{display:block;width:24px;height:2px;background:var(--charcoal);border-radius:2px;transition:all .3s;}
+
+  /* PAGE HERO */
+  .page-hero{background:var(--charcoal);padding:140px 60px 80px;position:relative;overflow:hidden;}
+  .page-hero::before{content:'';position:absolute;top:-120px;right:-120px;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(232,86,26,.15) 0%,transparent 70%);pointer-events:none;}
+  .page-hero-label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange-light);margin-bottom:14px;display:flex;align-items:center;gap:10px;}
+  .page-hero-label::before{content:'';display:block;width:20px;height:2px;background:var(--orange-light);border-radius:2px;}
+  .page-hero h1{font-family:'Fraunces',serif;font-size:clamp(36px,5vw,68px);font-weight:700;line-height:1.05;letter-spacing:-.02em;color:white;margin-bottom:20px;}
+  .page-hero h1 em{font-style:italic;font-weight:300;color:var(--orange-light);}
+  .page-hero p{font-size:17px;color:rgba(255,255,255,.75);line-height:1.7;max-width:560px;font-weight:300;}
+  .breadcrumb{display:flex;align-items:center;gap:8px;font-size:12px;color:rgba(255,255,255,.35);margin-bottom:24px;}
+  .breadcrumb a{color:rgba(255,255,255,.35);text-decoration:none;transition:color .2s;}
+  .breadcrumb a:hover{color:var(--orange-light);}
+  .breadcrumb span{color:rgba(255,255,255,.5);}
+
+  /* SECTION BASE */
+  section{padding:80px 60px;}
+  .section-label{font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--orange);margin-bottom:12px;display:flex;align-items:center;gap:10px;}
+  .section-label::before{content:'';display:block;width:20px;height:2px;background:var(--orange);border-radius:2px;}
+  .section-title{font-family:'Fraunces',serif;font-size:clamp(28px,4vw,48px);font-weight:600;line-height:1.1;letter-spacing:-.02em;color:var(--charcoal);margin-bottom:16px;}
+  .section-body{font-size:16px;color:var(--slate);line-height:1.75;max-width:580px;font-weight:300;margin-bottom:48px;}
+
+  /* CARDS */
+  .card{background:white;border-radius:16px;padding:36px;border:1px solid var(--rule);transition:transform .3s,box-shadow .3s;}
+  .card:hover{transform:translateY(-4px);box-shadow:0 16px 40px rgba(0,0,0,.08);}
+  .card-accent{border-left:4px solid var(--orange);}
+  .tag{display:inline-block;background:var(--orange-tint);color:var(--orange);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:3px 10px;border-radius:99px;margin-bottom:12px;}
+
+  /* BUTTONS */
+  .btn-primary{background:var(--orange);color:white;padding:14px 30px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;display:inline-block;transition:background .2s,transform .2s,box-shadow .2s;box-shadow:0 4px 20px rgba(232,86,26,.3);}
+  .btn-primary:hover{background:var(--orange-light);transform:translateY(-2px);box-shadow:0 8px 28px rgba(232,86,26,.35);}
+  .btn-outline{border:2px solid var(--orange);color:var(--orange);padding:12px 28px;border-radius:8px;font-size:15px;font-weight:600;text-decoration:none;display:inline-block;transition:all .2s;}
+  .btn-outline:hover{background:var(--orange);color:white;}
+
+  /* FOOTER */
+  footer{background:var(--charcoal);padding:48px 60px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px;border-top:1px solid rgba(255,255,255,.06);}
+  .footer-brand{font-family:'Fraunces',serif;font-size:20px;font-weight:700;color:white;letter-spacing:-.02em;}
+  .footer-brand span{color:var(--orange);}
+  .footer-tagline{font-size:13px;color:rgba(255,255,255,.3);margin-top:4px;}
+  .footer-links{display:flex;gap:24px;list-style:none;flex-wrap:wrap;}
+  .footer-links a{font-size:13px;color:rgba(255,255,255,.4);text-decoration:none;transition:color .2s;}
+  .footer-links a:hover{color:var(--orange);}
+  .footer-copy{font-size:12px;color:rgba(255,255,255,.2);}
+
+  /* MOBILE */
+  @media(max-width:900px){
+    nav{padding:14px 20px;}
+    .nav-links{display:none;}
+    .nav-links.open{display:flex;flex-direction:column;position:fixed;top:72px;left:0;right:0;background:var(--bg);padding:20px;border-bottom:1px solid var(--rule);gap:16px;box-shadow:0 8px 24px rgba(0,0,0,.08);z-index:99;}
+    .nav-hamburger{display:flex;}
+    .page-hero{padding:110px 24px 60px;}
+    section{padding:60px 24px;}
+    footer{padding:36px 24px;flex-direction:column;text-align:center;}
+    .footer-links{justify-content:center;}
+  }
+</style>
+</head>
+<body>
+<nav>
+  <a href="../index.html" class="nav-logo">Atker<span>.</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="../services.html">Services</a></li>
+    <li><a href="../tools.html">Tools</a></li>
+    <li><a href="../blog/">Insights</a></li>
+    <li><a href="../resources.html">Resources</a></li>
+    <li><a href="../index.html#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+  <div class="nav-hamburger" onclick="toggleNav()"><span></span><span></span><span></span></div>
+</nav>
+
+<div class="page-hero">
+  <div class="breadcrumb"><a href="../index.html">Home</a> &rsaquo; <a href="index.html">Insights</a> &rsaquo; <span>CDM 2015</span></div>
+  <div class="page-hero-label anim-up">CDM 2015</div>
+  <h1 class="anim-up-2" style="font-size:clamp(28px,4vw,52px);">CDM 2015 Explained: What Every Construction PM Needs to Know</h1>
+  <p style="font-size:13px;color:rgba(255,255,255,.35);margin-top:16px;">Atker Consultancy Team &middot; March 2026 &middot; 6 min read</p>
+</div>
+
+<section>
+  <div style="max-width:720px;">
+    <p style="font-size:16px;color:var(--slate);line-height:1.85;font-weight:300;font-size:17px;margin-bottom:24px;">The Construction (Design and Management) Regulations 2015 — commonly known as CDM 2015 — are the primary regulatory framework governing health, safety and welfare on UK construction projects. They came into force on 6 April 2015, replacing CDM 2007, and apply to virtually every construction project in the country. For a construction project manager, CDM 2015 isn't just a compliance box to tick. It's the framework that defines who is responsible for what, when, and how.</p>
+    <h3 style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--charcoal);margin:36px 0 14px;">Who does CDM 2015 apply to?</h3>
+<p style="font-size:16px;color:var(--slate);line-height:1.85;font-weight:300;margin-bottom:16px;">CDM 2015 applies to all construction work, though the extent of duties depends on whether a project is notifiable — meaning it will last more than 30 working days with more than 20 workers working simultaneously, or exceed 500 person-days of construction work. Notifiable projects require an F10 notification to the HSE and the appointment of a Principal Designer and Principal Contractor.</p><p style="font-size:16px;color:var(--slate);line-height:1.85;font-weight:300;margin-bottom:16px;">Even for non-notifiable projects, CDM 2015 still imposes duties on clients, designers and contractors. The scale of compliance requirements increases with the scale and complexity of the project.</p>
+<h3 style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--charcoal);margin:36px 0 14px;">The key duty holders</h3>
+<p style="font-size:16px;color:var(--slate);line-height:1.85;font-weight:300;margin-bottom:16px;"><strong style="font-weight:600;color:var(--charcoal);">The Client</strong> has overarching duties, including ensuring suitable arrangements are in place for managing the project and that sufficient time and resources are allocated. On most commercial projects, the client appoints a project manager or client representative to discharge these duties.</p><p style="font-size:16px;color:var(--slate);line-height:1.85;font-weight:300;margin-bottom:16px;"><strong style="font-weight:600;color:var(--charcoal);">The Principal Designer</strong> is responsible for planning, managing, monitoring and coordinating the pre-construction phase. They must ensure all designers cooperate and that health and safety is considered throughout design. This role is frequently misunderstood — it is not simply about design, but about coordinating health and safety across the entire pre-construction phase.</p><p style="font-size:16px;color:var(--slate);line-height:1.85;font-weight:300;margin-bottom:16px;"><strong style="font-weight:600;color:var(--charcoal);">The Principal Contractor</strong> takes over once construction begins. They plan, manage and monitor the construction phase, including producing and maintaining the Construction Phase Plan and ensuring all contractors cooperate with each other.</p>
+<h3 style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--charcoal);margin:36px 0 14px;">The three key documents</h3>
+<p style="font-size:16px;color:var(--slate);line-height:1.85;font-weight:300;margin-bottom:16px;">Three documents sit at the heart of CDM 2015 compliance.</p><ul style="margin:0 0 20px 20px;"><li style="font-size:15px;color:var(--slate);line-height:1.7;margin-bottom:8px;font-weight:300;"><strong style="font-weight:600;color:var(--charcoal);">Pre-Construction Information</strong> — compiled by the Principal Designer and provided to all designers and contractors before construction begins.</li><li style="font-size:15px;color:var(--slate);line-height:1.7;margin-bottom:8px;font-weight:300;"><strong style="font-weight:600;color:var(--charcoal);">Construction Phase Plan</strong> — prepared by the Principal Contractor before construction starts and updated throughout the project.</li><li style="font-size:15px;color:var(--slate);line-height:1.7;margin-bottom:8px;font-weight:300;"><strong style="font-weight:600;color:var(--charcoal);">Health and Safety File</strong> — compiled throughout the project and handed to the client at completion, recording information needed for future maintenance, alteration or demolition.</li></ul>
+<h3 style="font-family:'Fraunces',serif;font-size:22px;font-weight:600;color:var(--charcoal);margin:36px 0 14px;">Common failure points</h3>
+<p style="font-size:16px;color:var(--slate);line-height:1.85;font-weight:300;margin-bottom:16px;">In our experience, the most common CDM failures are not dramatic — they're administrative. The F10 not submitted or not updated. The Construction Phase Plan accepted but never reviewed. RAMS signed off but not checked against actual work on site. Site inductions completed but records not kept.</p><p style="font-size:16px;color:var(--slate);line-height:1.85;font-weight:300;margin-bottom:16px;">The solution is a systematic approach to compliance checks — not a last-minute scramble before an audit. Monthly CDM site checks, a running action log and a habit of documenting everything are the habits that keep projects compliant and project managers protected.</p>
+
+    <div style="background:var(--charcoal);border-radius:14px;padding:32px 36px;margin-top:40px;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;border-left:4px solid var(--orange);">
+      <p style="font-size:14px;color:rgba(255,255,255,.7);line-height:1.6;max-width:420px;margin:0;"><strong style="color:white;">Need a better way to manage CDM compliance on site?</strong> The Atker CDM Digital Audit Tool is a 45-item checklist built for construction PMs. Works offline, captures photo evidence, exports a PDF report.</p>
+      <a href="https://payhip.com/b/FB1ZU" target="_blank" rel="noopener" class="btn-primary">Get the tool &mdash; &pound;14.99</a>
+    </div>
+    <div style="margin-top:32px;padding-top:28px;border-top:1px solid var(--rule);display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
+      <a href="index.html" style="font-size:14px;color:var(--orange);font-weight:600;text-decoration:none;">&larr; Back to all insights</a>
+      <div style="font-size:13px;color:var(--mid);">Atker Consultancy Team &middot; March 2026</div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--bg-warm);">
+  <div class="section-label">More from the blog</div>
+  <h2 class="section-title">Keep reading</h2>
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:20px;">
+    <a href="cdm-2015-explained.html" style="text-decoration:none;"><div class="card"><div class="tag">CDM 2015</div><h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--charcoal);line-height:1.3;">CDM 2015 Explained</h3><p style="font-size:13px;color:var(--mid);margin-top:6px;">6 min read &rarr;</p></div></a>
+    <a href="pre-start-checklist.html" style="text-decoration:none;"><div class="card"><div class="tag">Pre-start</div><h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--charcoal);line-height:1.3;">Pre-Start CDM Checklist</h3><p style="font-size:13px;color:var(--mid);margin-top:6px;">5 min read &rarr;</p></div></a>
+    <a href="f10-notification.html" style="text-decoration:none;"><div class="card"><div class="tag">Compliance</div><h3 style="font-family:'Fraunces',serif;font-size:17px;font-weight:600;color:var(--charcoal);line-height:1.3;">F10 Notification Guide</h3><p style="font-size:13px;color:var(--mid);margin-top:6px;">4 min read &rarr;</p></div></a>
+  </div>
+</section>
+
+<footer>
+  <div>
+    <div class="footer-brand">Atker<span>.</span></div>
+    <div class="footer-tagline">Consultancy Services &mdash; Integrated Solutions</div>
+  </div>
+  <ul class="footer-links">
+    <li><a href="../index.html#services">Services</a></li>
+    <li><a href="../tools.html">Tools</a></li>
+    <li><a href="../blog/">Insights</a></li>
+    <li><a href="../resources.html">Resources</a></li>
+    <li><a href="../index.html#contact">Contact</a></li>
+  </ul>
+  <div class="footer-copy">&copy; 2026 Atker Consultancy Services Ltd</div>
+</footer>
+<script>
+function toggleNav(){document.getElementById('navLinks').classList.toggle('open');}
+document.querySelectorAll('.nav-links a').forEach(l=>l.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open')));
+window.addEventListener('scroll',()=>{document.querySelector('nav').style.boxShadow=window.scrollY>10?'0 2px 20px rgba(0,0,0,.08)':'none';});
+</script>
+</body>
+</html>
