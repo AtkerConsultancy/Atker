@@ -2,167 +2,157 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Website under construction — Atker</title>
-  <meta name="description" content="We’re working on our new website. In the meantime, you can still get in touch.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Domain for sale</title>
+  <meta name="description" content="This domain name is available for purchase. Contact the owner.">
   <meta name="robots" content="noindex,nofollow">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&family=Fraunces:opsz,wght@9..144,300;9..144,600;9..144,700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
   <style>
-    :root{
-      --brand:#E8561A;
-      --brand2:#FF8A5B;
-      --ink:#0B0C10;
-      --muted:rgba(11,12,16,.72);
-      --bg:#FAFAF8;
-      --stroke:rgba(15,18,28,.10);
-      --shadow:0 24px 80px rgba(0,0,0,.14);
-      --glow:0 20px 55px rgba(232,86,26,.20);
-      --radius:32px;
-      --sans:'DM Sans',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
-      --serif:'Fraunces',ui-serif,Georgia,serif;
+    :root {
+      --bg: #0c0e12;
+      --bg2: #12151c;
+      --text: #e9e6df;
+      --muted: rgba(233, 230, 223, 0.62);
+      --gold: #c4a35a;
+      --gold-dim: rgba(196, 163, 90, 0.35);
+      --line: rgba(233, 230, 223, 0.12);
+      --font-serif: "Cormorant Garamond", Georgia, serif;
+      --font-sans: "IBM Plex Sans", system-ui, sans-serif;
     }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family:var(--sans);
-      color:var(--ink);
-      background:
-        radial-gradient(900px 560px at 18% -6%, rgba(232,86,26,.12), transparent 60%),
-        radial-gradient(760px 520px at 108% 0%, rgba(255,138,91,.12), transparent 55%),
-        var(--bg);
-      min-height:100vh;
-      display:grid;
-      place-items:center;
-      padding:22px;
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: var(--font-sans);
+      color: var(--text);
+      background: var(--bg);
+      background-image:
+        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(196, 163, 90, 0.08), transparent),
+        radial-gradient(ellipse 60% 40% at 100% 100%, rgba(80, 100, 140, 0.12), transparent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 20px;
     }
-    .card{
-      width:min(860px, 100%);
-      border:1px solid var(--stroke);
-      border-radius:var(--radius);
-      background:rgba(255,255,255,.72);
-      backdrop-filter:blur(10px);
-      box-shadow:var(--shadow);
-      padding:44px;
-      position:relative;
-      overflow:hidden;
+
+    .panel {
+      width: min(560px, 100%);
+      padding: 48px 40px;
+      border: 1px solid var(--line);
+      border-radius: 4px;
+      background: linear-gradient(165deg, var(--bg2) 0%, var(--bg) 100%);
+      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.45);
+      text-align: center;
     }
-    .card::before{
-      content:"";
-      position:absolute;
-      width:520px;height:520px;
-      top:-360px;right:-360px;
-      background:radial-gradient(circle, rgba(232,86,26,.20), transparent 65%);
-      pointer-events:none;
+
+    .rule {
+      width: 48px;
+      height: 1px;
+      margin: 0 auto 28px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
     }
-    .brand{
-      font-family:var(--serif);
-      font-size:20px;
-      font-weight:800;
-      letter-spacing:-.03em;
-      display:inline-flex;
-      align-items:center;
-      gap:.2rem;
-      text-decoration:none;
-      color:inherit;
+
+    .label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--muted);
     }
-    .dot{color:var(--brand)}
-    .pill{
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding:6px 12px;
-      border-radius:999px;
-      background:rgba(232,86,26,.10);
-      border:1px solid rgba(232,86,26,.18);
-      color:rgba(232,86,26,.95);
-      font-size:12px;
-      font-weight:900;
-      letter-spacing:.12em;
-      text-transform:uppercase;
-      margin-top:18px;
+
+    h1 {
+      font-family: var(--font-serif);
+      font-size: clamp(2.1rem, 5vw, 2.75rem);
+      font-weight: 500;
+      line-height: 1.15;
+      margin: 16px 0 20px;
+      letter-spacing: 0.02em;
     }
-    h1{
-      font-family:var(--serif);
-      font-size:clamp(34px, 5vw, 56px);
-      line-height:1.05;
-      letter-spacing:-.04em;
-      margin:14px 0 12px;
+
+    h1 em {
+      font-style: italic;
+      font-weight: 500;
+      color: var(--gold);
     }
-    h1 em{font-style:italic;font-weight:300;color:var(--brand)}
-    p{
-      margin:0;
-      color:var(--muted);
-      font-size:16px;
-      line-height:1.8;
-      max-width:70ch;
+
+    p {
+      margin: 0;
+      font-size: 15px;
+      line-height: 1.75;
+      color: var(--muted);
+      font-weight: 400;
     }
-    .actions{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      margin-top:18px;
+
+    p + p {
+      margin-top: 14px;
     }
-    .btn{
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:10px;
-      padding:12px 16px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:750;
-      font-size:14px;
-      border:1px solid transparent;
-      transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+
+    .cta {
+      margin-top: 32px;
     }
-    .btn:hover{transform:translateY(-1px);}
-    .btn-primary{
-      background:linear-gradient(135deg,var(--brand),var(--brand2));
-      color:#fff;
-      box-shadow:var(--glow);
+
+    a.email {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 14px 28px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-decoration: none;
+      color: var(--bg);
+      background: linear-gradient(180deg, #d4b76a 0%, var(--gold) 100%);
+      border: 1px solid var(--gold-dim);
+      border-radius: 2px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .btn-primary:hover{box-shadow:0 24px 70px rgba(232,86,26,.26);}
-    .btn-ghost{
-      background:rgba(255,255,255,.75);
-      border-color:var(--stroke);
-      color:rgba(11,12,16,.86);
+
+    a.email:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 36px rgba(196, 163, 90, 0.25);
     }
-    .btn-ghost:hover{background:rgba(255,255,255,.95);}
-    .fine{
-      margin-top:18px;
-      font-size:13px;
-      color:rgba(11,12,16,.55);
+
+    a.email:focus-visible {
+      outline: 2px solid var(--gold);
+      outline-offset: 3px;
     }
-    .fine a{color:inherit}
-    @media (prefers-reduced-motion: reduce){
-      *{transition:none !important}
+
+    .footnote {
+      margin-top: 28px;
+      font-size: 12px;
+      color: rgba(233, 230, 223, 0.45);
+      letter-spacing: 0.02em;
     }
-    @media (max-width:560px){
-      .card{padding:28px}
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      a.email { transition: none; }
+    }
+
+    @media (max-width: 480px) {
+      .panel { padding: 36px 24px; }
     }
   </style>
 </head>
 <body>
-  <main class="card" role="main">
-    <a class="brand" href="#" aria-label="Atker home">Atker<span class="dot">.</span></a>
-    <div class="pill">Website update in progress</div>
-    <h1>We’re building something<br><em>better.</em></h1>
-    <p>
-      Our new website is currently under construction. If you need project support, CDM compliance help,
-      or you just want to talk through a situation, you can still reach us.
-    </p>
-    <div class="actions">
-      <a class="btn btn-primary" href="mailto:hello@atker.co.uk?subject=Website%20enquiry">Email us</a>
-      <a class="btn btn-ghost" href="https://payhip.com/b/FB1ZU" target="_blank" rel="noopener">CDM Audit Tool</a>
+  <main class="panel">
+    <div class="rule" aria-hidden="true"></div>
+    <p class="label">Opportunity</p>
+    <h1>This domain is <em>for sale</em></h1>
+    <p>If you are interested in acquiring this domain name, please get in touch. Serious enquiries welcome.</p>
+    <div class="cta">
+      <a class="email" href="mailto:atkerconsultancy@outlook.com?subject=Domain%20enquiry">atkerconsultancy@outlook.com</a>
     </div>
-    <div class="fine">
-      If you’d prefer, email us with your number and a good time to call.
-    </div>
+    <p class="footnote">Reply times vary; please include your best offer or questions in your message.</p>
   </main>
 </body>
 </html>
-
