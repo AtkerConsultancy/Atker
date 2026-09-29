@@ -1,158 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Domain for sale</title>
-  <meta name="description" content="This domain name is available for purchase. Contact the owner.">
-  <meta name="robots" content="noindex,nofollow">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #0c0e12;
-      --bg2: #12151c;
-      --text: #e9e6df;
-      --muted: rgba(233, 230, 223, 0.62);
-      --gold: #c4a35a;
-      --gold-dim: rgba(196, 163, 90, 0.35);
-      --line: rgba(233, 230, 223, 0.12);
-      --font-serif: "Cormorant Garamond", Georgia, serif;
-      --font-sans: "IBM Plex Sans", system-ui, sans-serif;
-    }
-
-    *, *::before, *::after { box-sizing: border-box; }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      font-family: var(--font-sans);
-      color: var(--text);
-      background: var(--bg);
-      background-image:
-        radial-gradient(ellipse 80% 50% at 50% -20%, rgba(196, 163, 90, 0.08), transparent),
-        radial-gradient(ellipse 60% 40% at 100% 100%, rgba(80, 100, 140, 0.12), transparent);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 28px 20px;
-    }
-
-    .panel {
-      width: min(560px, 100%);
-      padding: 48px 40px;
-      border: 1px solid var(--line);
-      border-radius: 4px;
-      background: linear-gradient(165deg, var(--bg2) 0%, var(--bg) 100%);
-      box-shadow: 0 32px 80px rgba(0, 0, 0, 0.45);
-      text-align: center;
-    }
-
-    .rule {
-      width: 48px;
-      height: 1px;
-      margin: 0 auto 28px;
-      background: linear-gradient(90deg, transparent, var(--gold), transparent);
-    }
-
-    .label {
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    h1 {
-      font-family: var(--font-serif);
-      font-size: clamp(2.1rem, 5vw, 2.75rem);
-      font-weight: 500;
-      line-height: 1.15;
-      margin: 16px 0 20px;
-      letter-spacing: 0.02em;
-    }
-
-    h1 em {
-      font-style: italic;
-      font-weight: 500;
-      color: var(--gold);
-    }
-
-    p {
-      margin: 0;
-      font-size: 15px;
-      line-height: 1.75;
-      color: var(--muted);
-      font-weight: 400;
-    }
-
-    p + p {
-      margin-top: 14px;
-    }
-
-    .cta {
-      margin-top: 32px;
-    }
-
-    a.email {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 14px 28px;
-      font-size: 14px;
-      font-weight: 600;
-      letter-spacing: 0.04em;
-      text-decoration: none;
-      color: var(--bg);
-      background: linear-gradient(180deg, #d4b76a 0%, var(--gold) 100%);
-      border: 1px solid var(--gold-dim);
-      border-radius: 2px;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    a.email:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 12px 36px rgba(196, 163, 90, 0.25);
-    }
-
-    a.email:focus-visible {
-      outline: 2px solid var(--gold);
-      outline-offset: 3px;
-    }
-
-    .footnote {
-      margin-top: 28px;
-      font-size: 12px;
-      color: rgba(233, 230, 223, 0.45);
-      letter-spacing: 0.02em;
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      a.email { transition: none; }
-    }
-
-    @media (max-width: 480px) {
-      .panel { padding: 36px 24px; }
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atker Consultancy Services</title>
+<meta name="description" content="Atker Consultancy Services - construction and infrastructure digital content, with project management consultancy and concierge services coming soon.">
+<link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <main class="panel">
-    <div class="rule" aria-hidden="true"></div>
-    <p class="label">Opportunity</p>
-    <h1>This domain is <em>for sale</em></h1>
-    <p>If you are interested in acquiring this domain name, please get in touch. Serious enquiries welcome.</p>
-    <div class="cta">
-      <a class="email" href="mailto:atkerconsultancy@outlook.com?subject=Domain%20enquiry">atkerconsultancy@outlook.com</a>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">ATKER<span>.</span> CONSULTANCY SERVICES</a>
+    <button class="nav-toggle" aria-label="Toggle menu">Menu</button>
+    <nav class="main-nav">
+      <a href="index.html" class="active">Home</a>
+      <a href="construction-digital-content.html">Construction Digital Content</a>
+      <a href="pm-consultancy.html">PM Consultancy</a>
+      <a href="concierge.html">Concierge</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="badge">South of England</span>
+    <h1>Practical construction and infrastructure expertise, built on 20+ years in the field.</h1>
+    <p>Atker Consultancy Services covers project management, specialist construction consultancy and digital tools, drawing on two decades of UK infrastructure delivery, NEC contract administration and CDM compliance.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <h2>What we offer</h2>
+    <p class="lede">We're building this out in stages. Construction Digital Content is live now; PM Consultancy and Concierge are coming soon.</p>
+
+    <div class="card-grid">
+
+      <div class="card">
+        <span class="status-pill live">Available now</span>
+        <h3>Construction Digital Content</h3>
+        <p>Digital tools, templates and fast-turnaround document services for construction and infrastructure projects, including the CDM Digital Audit Tool, Construction Phase Plans and NEC Compensation Event reviews.</p>
+        <a class="btn" href="construction-digital-content.html">View products &amp; services</a>
+      </div>
+
+      <div class="card">
+        <span class="status-pill soon">Coming soon</span>
+        <h3>PM Consultancy</h3>
+        <p>Project management and specialist consultancy covering NEC contract administration, CDM 2015, NRSWA/Streetworks and planning applications.</p>
+        <a class="btn secondary" href="pm-consultancy.html">Register interest</a>
+      </div>
+
+      <div class="card">
+        <span class="status-pill soon">Coming soon</span>
+        <h3>Concierge</h3>
+        <p>A flexible concierge service for construction and infrastructure projects. No task too big, no task too small.</p>
+        <a class="btn secondary" href="concierge.html">Register interest</a>
+      </div>
+
     </div>
-    <p class="footnote">Reply times vary; please include your best offer or questions in your message.</p>
-  </main>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <p>Atker Consultancy Services &middot; atker.co.uk<br>
+    Get in touch: <a href="mailto:atkerconsultancy@outlook.com">atkerconsultancy@outlook.com</a></p>
+  </div>
+</footer>
+
+<script src="script.js"></script>
 </body>
 </html>
