@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Project Management Tools & Services | Atker</title>
+<meta name="description" content="Construction Phase Plan creation and project management tools from Atker Consultancy Services.">
+<link rel="icon" href="assets/atker-logo.png">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">Atker<span>.</span></a>
+    <button class="nav-toggle" aria-label="Toggle menu">Menu</button>
+    <nav class="main-nav">
+      <a href="index.html">Home</a>
+      <a href="services.html" class="active">Services</a>
+      <a href="coming-soon.html">Coming Soon</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero mini-hero">
+  <div class="wrap">
+    <a class="back-link" href="services.html">&larr; All services</a><br>
+    <span class="badge">Available now</span>
+    <h1>Project Management Tools &amp; Services</h1>
+    <p>Fast-turnaround documents and tools built on 20+ years of delivering construction and infrastructure projects.</p>
+  </div>
+</section>
+
+<section class="on-light">
+  <div class="wrap">
+    <span class="eyebrow">Fast-turnaround service</span>
+    <h2>Services</h2>
+    <p class="lede">Bespoke documents built around your project. Standard turnaround is 7 days; express delivery within 48 hours is available for an additional fee, agreed when you enquire.</p>
+    <div class="card-grid">
+      <div class="card product">
+        <span class="status-pill live">Service</span>
+        <h3>Construction Phase Plan (CPP)</h3>
+        <p class="price-line">&pound;150</p>
+        <p>A Construction Phase Plan written around your project specifics, drawing on hands-on CDM 2015 experience. Standard 7 days, express 48 hours.</p>
+        <a class="btn" href="#enquire">Request a CPP</a>
+      </div>
+
+      <div class="card dashed">
+        <span class="status-pill pipeline">More to come</span>
+        <h3>More project management tools</h3>
+        <p>We add templates and tools as they are ready. Looking for CDM tools? <a href="cdm.html">See CDM Tools &amp; Services</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="enquire" class="tight anchor-offset">
+  <div class="wrap">
+    <span class="eyebrow">Get started</span>
+    <h2>Request a Construction Phase Plan</h2>
+    <p class="lede">Tell us a bit about the project. This opens your email client with the details ready to send.</p>
+    <form id="cpp-form" class="form-card">
+      <div class="field"><label for="cpp-form-name">Name</label><input type="text" id="cpp-form-name" name="name" data-field data-label="Name" required></div>
+      <div class="field"><label for="cpp-form-email">Email</label><input type="email" id="cpp-form-email" name="email" data-field data-label="Email" required></div>
+      <div class="field"><label for="cpp-form-org">Company / project</label><input type="text" id="cpp-form-org" name="org" data-field data-label="Company / project"></div>
+      <div class="field"><label for="cpp-form-service">Service</label><select id="cpp-form-service" name="service" data-field data-label="Service" data-subject="true"><option value="CDM Construction Phase Plan (standard, 7 days)">CDM Construction Phase Plan (standard, 7 days)</option><option value="CDM Construction Phase Plan (express, 48 hours)">CDM Construction Phase Plan (express, 48 hours)</option></select></div>
+      <div class="field"><label for="cpp-form-notes">Project details</label><textarea id="cpp-form-notes" name="notes" data-field data-label="Details" placeholder="A few lines about the project or what you need"></textarea></div>
+      <button type="submit" class="btn">Send</button>
+      <p class="form-note">Submitting opens an email to atker@outlook.com with your details filled in. Nothing is sent automatically or stored.</p>
+      <p class="form-status"></p>
+    </form>
+    <script>document.addEventListener("DOMContentLoaded", function () { initMailtoForm("cpp-form", "atker@outlook.com", "CPP enquiry"); });</script>
+
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div>
+      <p style="margin:0;">Atker Consultancy Services &middot; atker.co.uk<br>
+      Get in touch: <a href="mailto:atker@outlook.com">atker@outlook.com</a></p>
+      <p class="small">For the time being, Atker digital products are sold and delivered through our branding and distribution partner, Digital Revenue Studio.</p>
+    </div>
+    <img src="assets/atker-logo.png" alt="Atker Consultancy Services badge">
+  </div>
+</footer>
+
+<script src="links.js"></script>
+<script src="script.js"></script>
+</body>
+</html>

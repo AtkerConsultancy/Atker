@@ -55,6 +55,33 @@ function initMailtoForm(formId, recipient, subjectPrefix) {
   });
 }
 
+// Buttons marked data-link="name" take their address from ATKER_LINKS (links.js).
+// If no address has been added yet, the button shows as "coming soon" and does nothing.
+function initLinks() {
+  if (typeof ATKER_LINKS === "undefined") { return; }
+  var items = document.querySelectorAll("[data-link]");
+  for (var i = 0; i < items.length; i++) {
+    var el = items[i];
+    var url = ATKER_LINKS[el.getAttribute("data-link")];
+    if (url) {
+      el.setAttribute("href", url);
+      el.setAttribute("target", "_blank");
+      el.setAttribute("rel", el.getAttribute("data-affiliate") ? "noopener sponsored" : "noopener");
+    } else {
+      el.removeAttribute("href");
+      el.classList.add("pending");
+      el.setAttribute("aria-disabled", "true");
+      var label = el.getAttribute("data-pending-label");
+      if (label) {
+        el.textContent = label;
+      } else if (el.textContent.indexOf("coming soon") === -1) {
+        el.textContent = el.textContent + " (coming soon)";
+      }
+    }
+  }
+}
+
 document.addEventListener("DOMContentLoaded", function () {
   initNavToggle();
+  initLinks();
 });
