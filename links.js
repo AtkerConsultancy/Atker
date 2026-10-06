@@ -2,8 +2,8 @@
 // Leave a value empty and its button shows as "coming soon" until you add the link.
 var ATKER_LINKS = {
   // The book
-  amazonTlc: "",          // Amazon listing for the hardback (https://www.amazon.co.uk/dp/...)
-  amazonKindle: "",       // Amazon listing for the Kindle edition (use your Associates link)
+  amazonTlc: "https://link.amazon/B08lu5MJY",   // Amazon Associates: hardback
+  amazonKindle: "https://link.amazon/B03ccreLI",   // Amazon Associates: Kindle edition
   gumroadTlc: "https://digitalrevstudio.gumroad.com/l/tlc",   // Gumroad page for the TLC download (live once published)
   ringBinder: "https://link.amazon/B0dxzPthl",          // Amazon Associates: eco-eco A5 ring binder with 12 punched pockets
   punchedPockets: "https://link.amazon/B05dNGUOB",      // Amazon Associates: Janrax A5 punched pockets, pack of 100
