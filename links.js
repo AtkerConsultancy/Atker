@@ -3,7 +3,7 @@
 var ATKER_LINKS = {
   // The book
   amazonTlc: "",          // Amazon listing for the hardback (https://www.amazon.co.uk/dp/...)
-  amazonKindle: "https://link.amazon/B03ccreLI",   // Amazon Associates: Kindle edition
+  amazonKindle: "",       // Amazon listing for the Kindle edition (use your Associates link)
   gumroadTlc: "https://digitalrevstudio.gumroad.com/l/tlc",   // Gumroad page for the TLC download (live once published)
   ringBinder: "https://link.amazon/B0dxzPthl",          // Amazon Associates: eco-eco A5 ring binder with 12 punched pockets
   punchedPockets: "https://link.amazon/B05dNGUOB",      // Amazon Associates: Janrax A5 punched pockets, pack of 100
