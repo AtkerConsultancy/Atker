@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://atker.co.uk/</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://atker.co.uk/shop.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://atker.co.uk/tlc.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://atker.co.uk/nec.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://atker.co.uk/cdm.html</loc><lastmod>2026-10-07</lastmod></url>
-  <url><loc>https://atker.co.uk/privacy.html</loc><lastmod>2026-10-07</lastmod></url>
+  <url><loc>https://atker.co.uk/</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://atker.co.uk/shop</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://atker.co.uk/tlc</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://atker.co.uk/claude-training</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://atker.co.uk/nec</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://atker.co.uk/cdm</loc><lastmod>2026-10-24</lastmod></url>
+  <url><loc>https://atker.co.uk/privacy</loc><lastmod>2026-10-24</lastmod></url>
 </urlset>

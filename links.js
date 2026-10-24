@@ -7,6 +7,8 @@ var ATKER_LINKS = {
   gumroadTlc: "https://digitalrevstudio.gumroad.com/l/tlc",   // Gumroad page for the TLC download (live once published)
   ringBinder: "https://link.amazon/B0dxzPthl",          // Amazon Associates: eco-eco A5 ring binder with 12 punched pockets
   punchedPockets: "https://link.amazon/B05dNGUOB",      // Amazon Associates: Janrax A5 punched pockets, pack of 100
+  // Claude training pack (add the Gumroad link here once the product is live)
+  gumroadClaudeTraining: "https://digitalrevstudio.gumroad.com/l/claude-training",
   // Tools
   gumroadCdmAudit: "https://digitalrevstudio.gumroad.com/l/wkqrj",  // CDM Digital Audit Tool (£14.99)
   // NEC bundles
